@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Media Queries</title>
+
+  <!-- Patch to make semantic elements work in IE8 and below. -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+<style>
+body {
+  font-size: small;
+  font-family: Verdana;
+}
+
+article  {
+  border: solid 1px black;
+  padding: 15px;
+  margin: 5px;
+  background: yellow;
+  float: left;
+  width: 330px;
+}
+
+aside  {
+  border: solid 1px black;
+  padding: 15px;
+  margin: 5px;
+  background: yellow;
+  position: absolute;
+  float: left;
+  margin-left: 370px;
+}
+
+@media (max-width: 480px) {
+  article {
+    float: none;
+    width: auto;
+  }
+
+  aside {
+    position: static;
+    float: none;
+    background: pink;
+    margin-left: 5px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+<article>
+<b>This region represents the main content. In this layout, it
+uses a fixed width of 330 pixels. Here is some sample text
+to make it seem more realistic: </b><br><br>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum, nunc sit amet pharetra convallis, dolor est commodo diam, at pellentesque mauris nibh convallis nulla. 
+Pellentesque non lorem augue, id adipiscing odio. Cras arcu magna, lobortis eu mollis iaculis, mattis ut est. Donec semper varius augue, euismod rutrum tellus dapibus at. Pellentesque vitae ante in nisi viverra aliquet vel et turpis.
+In hac habitasse platea dictumst. Nulla scelerisque malesuada ultricies. Vivamus suscipit massa quis sapien facilisis auctor. Mauris nec sem sit amet elit ultricies suscipit in quis ante. Donec mollis neque vel massa pharetra consequat. 
+</article>
+
+<aside>
+<b>This region represents the sidebar. It fits whatever space
+is leftover on the right side. <br>A media query turns this into a pink footer when the browser window shrinks down.</b>
+</aside>
+
+</body>
+</html>
